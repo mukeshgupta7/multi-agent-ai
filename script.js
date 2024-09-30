@@ -72,3 +72,4 @@ form.addEventListener('submit', (e) => {
     responseContainer.innerHTML = responseHtml;
   })
   .catch((error) => console.error('Error:', error));
+}
