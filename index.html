@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Campaign Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Marketing Campaign Manager</h1>
+        <form id="campaign-form">
+            <h2>Customer Data</h2>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age">
+            </div>
+            <div class="form-group">
+                <label for="income">Income:</label>
+                <input type="number" id="income" name="income">
+            </div>
+            <div class="form-group">
+                <label for="engagement-rate">Engagement Rate:</label>
+                <input type="number" id="engagement-rate" name="engagement-rate" step="0.01">
+            </div>
+            <h2>Prompt</h2>
+            <div class="form-group">
+                <label for="prompt">Prompt:</label>
+                <textarea id="prompt" name="prompt"></textarea>
+            </div>
+            <h2>Metrics</h2>
+            <div class="form-group">
+                <label for="ctr">CTR:</label>
+                <input type="number" id="ctr" name="ctr" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="conversion-rate">Conversion Rate:</label>
+                <input type="number" id="conversion-rate" name="conversion-rate" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="engagement-rate-metrics">Engagement Rate:</label>
+                <input type="number" id="engagement-rate-metrics" name="engagement-rate-metrics" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="bounce-rate">Bounce Rate:</label>
+                <input type="number" id="bounce-rate" name="bounce-rate" step="0.01">
+            </div>
+            <button id="submit-button">Submit</button>
+        </form>
+        <div id="response-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
