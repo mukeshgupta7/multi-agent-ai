@@ -1,7 +1,6 @@
 const form = document.getElementById('campaign-form');
 const responseContainer = document.getElementById('response-container');
 const API_URL = 'http://18.191.132.231:5000';
-import axios from 'axios';
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
