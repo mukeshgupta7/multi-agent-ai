@@ -1,6 +1,6 @@
 const form = document.getElementById('campaign-form');
 const responseContainer = document.getElementById('response-container');
-const API_URL = '18.191.132.231:5000';
+const API_URL = 'http://18.191.132.231:5000';
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
