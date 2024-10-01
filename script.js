@@ -23,53 +23,53 @@ form.addEventListener('submit', (e) => {
         metrics: metrics,
     };
 
-//     fetch(`${API_URL}/process_campaign`, {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(data),
-//     })
-//     .then((response) => response.json())
-//     .then((data) => {
-//         const segment = data.segment;
-//         const generatedContent = data.generated_content;
-//         const optimization = data.optimization;
-//         const performanceSuggestions = data.performance_suggestions;
+    fetch(`${API_URL}/process_campaign`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        const segment = data.segment;
+        const generatedContent = data.generated_content;
+        const optimization = data.optimization;
+        const performanceSuggestions = data.performance_suggestions;
 
-//         const responseHtml = `
-//             <h2>Results</h2>
-//             <p>Segment: ${segment}</p>
-//             <p>Generated Content: ${generatedContent}</p>
-//             <p>Optimization: ${JSON.stringify(optimization)}</p>
-//             <p>Performance Suggestions: ${JSON.stringify(performanceSuggestions)}</p>
-//         `;
+        const responseHtml = `
+            <h2>Results</h2>
+            <p>Segment: ${segment}</p>
+            <p>Generated Content: ${generatedContent}</p>
+            <p>Optimization: ${JSON.stringify(optimization)}</p>
+            <p>Performance Suggestions: ${JSON.stringify(performanceSuggestions)}</p>
+        `;
 
-//         responseContainer.innerHTML = responseHtml;
-//     })
-//     .catch((error) => console.error('Error:', error));
-// });
-
-    axios.post(`${API_URL}/process_campaign`, data, {
-  headers: {
-    'Content-Type': 'application/json',
-  },
-})
-  .then((response) => {
-    const segment = response.data.segment;
-    const generatedContent = response.data.generated_content;
-    const optimization = response.data.optimization;
-    const performanceSuggestions = response.data.performance_suggestions;
-
-    const responseHtml = `
-      <h2>Results</h2>
-      <p>Segment: ${segment}</p>
-      <p>Generated Content: ${generatedContent}</p>
-      <p>Optimization: ${JSON.stringify(optimization)}</p>
-      <p>Performance Suggestions: ${JSON.stringify(performanceSuggestions)}</p>
-    `;
-
-    responseContainer.innerHTML = responseHtml;
-  })
-  .catch((error) => console.error('Error:', error));
+        responseContainer.innerHTML = responseHtml;
+    })
+    .catch((error) => console.error('Error:', error));
 });
+
+//     axios.post(`${API_URL}/process_campaign`, data, {
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+// })
+//   .then((response) => {
+//     const segment = response.data.segment;
+//     const generatedContent = response.data.generated_content;
+//     const optimization = response.data.optimization;
+//     const performanceSuggestions = response.data.performance_suggestions;
+
+//     const responseHtml = `
+//       <h2>Results</h2>
+//       <p>Segment: ${segment}</p>
+//       <p>Generated Content: ${generatedContent}</p>
+//       <p>Optimization: ${JSON.stringify(optimization)}</p>
+//       <p>Performance Suggestions: ${JSON.stringify(performanceSuggestions)}</p>
+//     `;
+
+//     responseContainer.innerHTML = responseHtml;
+//   })
+//   .catch((error) => console.error('Error:', error));
+// });
