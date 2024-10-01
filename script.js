@@ -37,13 +37,37 @@ form.addEventListener('submit', (e) => {
         const optimization = data.optimization;
         const performanceSuggestions = data.performance_suggestions;
 
+        // const responseHtml = `
+        //     <h2>Results</h2>
+        //     <p>Segment: ${segment}</p>
+        //     <p>Generated Content: ${generatedContent}</p>
+        //     <p>Optimization: ${JSON.stringify(optimization)}</p>
+        //     <p>Performance Suggestions: ${JSON.stringify(performanceSuggestions)}</p>
+        // `;
+
         const responseHtml = `
-            <h2>Results</h2>
-            <p>Segment: ${segment}</p>
-            <p>Generated Content: ${generatedContent}</p>
-            <p>Optimization: ${JSON.stringify(optimization)}</p>
-            <p>Performance Suggestions: ${JSON.stringify(performanceSuggestions)}</p>
-        `;
+  <div class="response-container">
+    <h2>Results</h2>
+    <div class="result">
+      <h3>Segment:</h3>
+      <p>${segment}</p>
+    </div>
+    <div class="result">
+      <h3>Generated Content:</h3>
+      <p>${generatedContent}</p>
+    </div>
+    <div class="result">
+      <h3>Optimization:</h3>
+      <pre>${JSON.stringify(optimization, null, 2)}</pre>
+    </div>
+    <div class="result">
+      <h3>Performance Suggestions:</h3>
+      <pre>${JSON.stringify(performanceSuggestions, null, 2)}</pre>
+    </div>
+  </div>
+`;
+
+responseContainer.innerHTML = responseHtml;
 
         responseContainer.innerHTML = responseHtml;
     })
