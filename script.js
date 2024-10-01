@@ -37,35 +37,56 @@ form.addEventListener('submit', (e) => {
         const optimization = data.optimization;
         const performanceSuggestions = data.performance_suggestions;
 
-        // const responseHtml = `
-        //     <h2>Results</h2>
-        //     <p>Segment: ${segment}</p>
-        //     <p>Generated Content: ${generatedContent}</p>
-        //     <p>Optimization: ${JSON.stringify(optimization)}</p>
-        //     <p>Performance Suggestions: ${JSON.stringify(performanceSuggestions)}</p>
-        // `;
-
         const responseHtml = `
   <div class="response-container">
-    <h2>Results</h2>
-    <div class="result">
-      <h3>Segment:</h3>
-      <p>${segment}</p>
-    </div>
-    <div class="result">
-      <h3>Generated Content:</h3>
-      <p>${generatedContent}</p>
-    </div>
-    <div class="result">
-      <h3>Optimization:</h3>
-      <pre>${JSON.stringify(optimization, null, 2)}</pre>
-    </div>
-    <div class="result">
-      <h3>Performance Suggestions:</h3>
-      <pre>${JSON.stringify(performanceSuggestions, null, 2)}</pre>
+    <h1>Marketing Campaign Results</h1>
+    <div class="results-grid">
+      <div class="result-card">
+        <h2>Segment</h2>
+        <p>${segment}</p>
+      </div>
+      <div class="result-card">
+        <h2>Generated Content</h2>
+        <p>${generatedContent}</p>
+      </div>
+      <div class="result-card">
+        <h2>Optimization</h2>
+        <div class="optimization-container">
+          <p><strong>Key:</strong> ${Object.keys(optimization)[0]}</p>
+          <p><strong>Value:</strong> ${optimization[Object.keys(optimization)[0]]}</p>
+        </div>
+      </div>
+      <div class="result-card">
+        <h2>Performance Suggestions</h2>
+        <ul class="suggestions-list">
+          ${performanceSuggestions.map(suggestion => `<li>${suggestion}</li>`).join('')}
+        </ul>
+      </div>
     </div>
   </div>
 `;
+
+//         const responseHtml = `
+//   <div class="response-container">
+//     <h2>Results</h2>
+//     <div class="result">
+//       <h3>Segment:</h3>
+//       <p>${segment}</p>
+//     </div>
+//     <div class="result">
+//       <h3>Generated Content:</h3>
+//       <p>${generatedContent}</p>
+//     </div>
+//     <div class="result">
+//       <h3>Optimization:</h3>
+//       <pre>${JSON.stringify(optimization, null, 2)}</pre>
+//     </div>
+//     <div class="result">
+//       <h3>Performance Suggestions:</h3>
+//       <pre>${JSON.stringify(performanceSuggestions, null, 2)}</pre>
+//     </div>
+//   </div>
+// `;
 
 responseContainer.innerHTML = responseHtml;
 
